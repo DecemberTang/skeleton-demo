@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 // webpack.config.js
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+// const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 const px2rem = require('postcss-px2rem')
 const cssnext = require('postcss-cssnext')({
   browsers: [
@@ -47,6 +48,23 @@ module.exports = {
         ]
       },
       {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/,
+        loader: 'file-loader?publicPath=../'
+      },
+      // {
+      //   test: /\.p?css$/,
+      //   use: [{
+      //     loader: 'css-loader',
+      //     options: {importLoaders: 1}
+      //   },{
+      //     loader: 'postcss-loader',
+      //   }]
+      // },
+      {
         test: /\.vue$/,
         loader: 'vue-loader'
       },
@@ -59,7 +77,7 @@ module.exports = {
         )
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif|svg|jpeg)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]?[hash]'

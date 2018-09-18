@@ -1,4 +1,4 @@
-# sale
+# Skeleton Demo
 
 > skeleton plugin demo
 
