@@ -19,7 +19,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/',
+    publicPath: 'http://127.0.0.1:8081/dist/',
     filename: 'build.js'
   },
   module: {
@@ -53,7 +53,7 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/,
-        loader: 'file-loader?publicPath=../'
+        loader: 'file-loader?publicPath=http://127.0.0.1:8081/dist/'
       },
       // {
       //   test: /\.p?css$/,
@@ -92,7 +92,7 @@ module.exports = {
     }),
     new VueLoaderPlugin(),
     new SkeletonPlugin({
-      pathname: path.resolve(__dirname, `./shell`),
+      pathname: path.resolve(__dirname, './shell'),
       staticDir: path.resolve(__dirname, './dist'),
       routes: ['/', '/search'],
       port: '7890',

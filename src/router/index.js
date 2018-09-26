@@ -21,12 +21,8 @@ const router = new Router({
       component: home
     },
     {
-      path: '/search',
-      redirect: '/dist/search'
-    },
-    {
       name: 'search',
-      path: '/dist/search',
+      path: '/search',
       component: search
     }
   ]

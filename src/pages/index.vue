@@ -22,7 +22,7 @@
     </div>
     <div class="section">
       <jad-icon icon-name="edit" :icon-size="40"></jad-icon>
-      <div class="sub-title">图片块：img</div>
+      <div class="sub-title" @click="linkTo">图片块：img</div>
       <div class="sub-line"></div>
       <img src="../assets/1.jpeg" class="image">
     </div>
@@ -59,7 +59,10 @@ export default {
       }
     },
     methods: {
-      panelClick() {}
+      panelClick() {},
+      linkTo(){
+        this.$route.push('/search')
+      }
     }
   }
 </script>
